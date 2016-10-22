@@ -1,6 +1,6 @@
-import {regularExpression, many1, or, Parser, symbol} from 'parser-lib';
+import {regularExpression, many1, or, Parser, withDefault} from 'parser-lib';
 
-export const nameStart: Parser<any, string> = many1(
+const nameStart: Parser<any, string> = many1(
   or(
     regularExpression(/^[A-Za-z]/),
     regularExpression(/^[\u00C0-\u00D6]/),
@@ -17,3 +17,22 @@ export const nameStart: Parser<any, string> = many1(
     regularExpression(/^[_?]/)
   ).map(matched => matched[0])
 ).map(parts => parts.join(''));
+
+const namePart: Parser<any, string> = many1(
+  or(
+    or(
+      regularExpression(/^[0-9]/),
+      regularExpression(/^[\u00B7\u0300-\u036F\u203F-\u2040]/)
+    ).map(matched => matched[0]),
+    nameStart
+  )
+).map(parts => parts.join(''));
+
+export const name: Parser<any, string> =
+  nameStart.flatMap(nameStart => {
+    return withDefault(
+      namePart
+        .map(namePart => nameStart + namePart),
+      nameStart
+    );
+  });

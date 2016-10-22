@@ -24,7 +24,7 @@
   },
   "homepage": "https://github.com/sielakos/feel-parser#readme",
   "dependencies": {
-    "parser-lib": "^0.1.1"
+    "parser-lib": "^0.2.0"
   },
   "devDependencies": {
     "@types/chai": "^3.4.34",
