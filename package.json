@@ -1,0 +1,38 @@
+{
+  "name": "@sielakos/feel-parser",
+  "version": "0.1.0",
+  "description": "simple feel parser",
+  "main": "index.js",
+  "scripts": {
+    "prepublish": "npm run compile",
+    "clean": "rm -rf dist",
+    "compile": "./node_modules/.bin/tsc",
+    "test": "./node_modules/.bin/mocha --require ts-node/register test/**/*.test.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sielakos/feel-parser.git"
+  },
+  "keywords": [
+    "feel",
+    "parser"
+  ],
+  "author": "sielakos",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sielakos/feel-parser/issues"
+  },
+  "homepage": "https://github.com/sielakos/feel-parser#readme",
+  "dependencies": {
+    "parser-lib": "^0.1.1"
+  },
+  "devDependencies": {
+    "@types/chai": "^3.4.34",
+    "@types/mocha": "^2.2.32",
+    "chai": "^3.5.0",
+    "mocha": "^3.1.2",
+    "ts-helpers": "^1.1.2",
+    "ts-node": "^1.6.0",
+    "typescript": "^2.0.3"
+  }
+}
