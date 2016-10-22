@@ -66,4 +66,20 @@ describe('name', () => {
       expect(state.result).to.eql('a\u00B7a');
     });
   });
+
+  it('should fail for wrong name', () => {
+    const result = name.parseText('1ali1ł d');
+
+    expect(result.isRight()).to.eql(false);
+
+    result.onLeft(error => {
+      const state = error.state;
+
+      console.log(error);
+
+      expect(state.col).to.eql(0);
+      expect(state.row).to.eql(0);
+      expect(state.str).to.eql('1ali1ł d');
+    });
+  });
 });
