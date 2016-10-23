@@ -11,7 +11,8 @@ describe('name', () => {
       expect(state.str).to.eql('');
       expect(state.col).to.eql(7);
       expect(state.row).to.eql(0);
-      expect(state.result).to.eql('alinaZS');
+      expect(state.result.children).to.eql(['alinaZS']);
+      expect(state.result.operator).to.eql('name');
     });
   });
 
@@ -24,7 +25,8 @@ describe('name', () => {
       expect(state.str).to.eql(' d');
       expect(state.col).to.eql(3);
       expect(state.row).to.eql(0);
-      expect(state.result).to.eql('_?d');
+      expect(state.result.children).to.eql(['_?d']);
+      expect(state.result.operator).to.eql('name');
     });
   });
 
@@ -37,7 +39,8 @@ describe('name', () => {
       expect(state.str).to.eql(' d');
       expect(state.col).to.eql(2);
       expect(state.row).to.eql(0);
-      expect(state.result).to.eql('\u00D8\u00F1');
+      expect(state.result.children).to.eql(['\u00D8\u00F1']);
+      expect(state.result.operator).to.eql('name');
     });
   });
 
@@ -50,7 +53,8 @@ describe('name', () => {
       expect(state.str).to.eql(' d');
       expect(state.col).to.eql(3);
       expect(state.row).to.eql(0);
-      expect(state.result).to.eql('a1a');
+      expect(state.result.children).to.eql(['a1a']);
+      expect(state.result.operator).to.eql('name');
     });
   });
 
@@ -63,7 +67,8 @@ describe('name', () => {
       expect(state.str).to.eql(' d');
       expect(state.col).to.eql(3);
       expect(state.row).to.eql(0);
-      expect(state.result).to.eql('a\u00B7a');
+      expect(state.result.children).to.eql(['a\u00B7a']);
+      expect(state.result.operator).to.eql('name');
     });
   });
 
@@ -74,8 +79,6 @@ describe('name', () => {
 
     result.onLeft(error => {
       const state = error.state;
-
-      console.log(error);
 
       expect(state.col).to.eql(0);
       expect(state.row).to.eql(0);

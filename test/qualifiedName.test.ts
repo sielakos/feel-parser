@@ -8,7 +8,8 @@ describe('qualifiedName', () => {
     expect(result.isRight()).to.eql(true);
 
     result.onRight(state => {
-      expect(state.result).to.eql(['ali1ł']);
+      expect(state.result.children).to.eql(['ali1ł']);
+      expect(state.result.operator).to.eql('qualifiedName');
       expect(state.col).to.eql(5);
       expect(state.row).to.eql(0);
       expect(state.str).to.eql(' d');
@@ -21,7 +22,8 @@ describe('qualifiedName', () => {
     expect(result.isRight()).to.eql(true);
 
     result.onRight(state => {
-      expect(state.result).to.eql(['a', 'li', 'd1ł']);
+      expect(state.result.children).to.eql(['a', 'li', 'd1ł']);
+      expect(state.result.operator).to.eql('qualifiedName');
       expect(state.col).to.eql(8);
       expect(state.row).to.eql(0);
       expect(state.str).to.eql(' d');

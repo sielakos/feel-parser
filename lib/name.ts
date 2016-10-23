@@ -1,4 +1,5 @@
 import {regularExpression, many1, or, Parser, withDefault} from 'parser-lib';
+import {Tree} from './tree';
 
 const nameStart: Parser<any, string> = many1(
   or(
@@ -28,11 +29,14 @@ const namePart: Parser<any, string> = many1(
   )
 ).map(parts => parts.join(''));
 
-export const name: Parser<any, string> =
-  nameStart.flatMap(nameStart => {
+export const name: Parser<any, Tree<string>> = nameStart
+  .flatMap(nameStart => {
     return withDefault(
       namePart
         .map(namePart => nameStart + namePart),
       nameStart
     );
-  });
+  })
+  .map(name => new Tree('name', [name]))
+  .changeErrorMessage('Expected name');
+
