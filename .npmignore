@@ -1,5 +1,6 @@
 lib/
 node_modules/
-.idea
-coverage
-dist/test
+.idea/
+coverage/
+dist/test/
+test/

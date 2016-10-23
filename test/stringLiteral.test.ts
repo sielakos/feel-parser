@@ -11,7 +11,7 @@ describe('stringLiteral', () => {
 
     result.onRight(state => {
       expect(state.result.children).to.eql([value]);
-      expect(state.result.operator).to.eql('stringLiteral');
+      expect(state.result.operator).to.eql('string');
       expect(state.col).to.eql(value.length + 2);
       expect(state.row).to.eql(0);
       expect(state.str).to.eql(rest);

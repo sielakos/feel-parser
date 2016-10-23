@@ -25,7 +25,7 @@
   },
   "homepage": "https://github.com/sielakos/feel-parser#readme",
   "dependencies": {
-    "parser-lib": "^0.2.0",
+    "parser-lib": "~0.3.0",
     "ts-helpers": "^1.1.2"
   },
   "devDependencies": {
