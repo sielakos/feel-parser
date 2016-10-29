@@ -7,3 +7,4 @@ export * from './stringLiteral';
 export * from './booleanLiteral';
 export * from './numericLiteral';
 export * from './dateTimeLiteral';
+export * from './simpleLiteral';
