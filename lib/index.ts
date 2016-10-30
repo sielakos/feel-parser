@@ -9,3 +9,4 @@ export * from './numericLiteral';
 export * from './dateTimeLiteral';
 export * from './simpleLiteral';
 export * from './simpleValue';
+export * from './interval';
