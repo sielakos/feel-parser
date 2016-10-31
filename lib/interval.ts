@@ -37,8 +37,8 @@ export const interval: Parser<any, Tree<boolean | number | string>> = namedSeque
   return new Tree(
     'interval',
     [
-      new Tree(result['openBracket'].operator, result['start'].children),
-      new Tree(result['closeBracket'].operator, result['end'].children)
+      new Tree(result['openBracket'].operator, [result['start']]),
+      new Tree(result['closeBracket'].operator, [result['end']])
     ]
   );
 });

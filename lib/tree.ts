@@ -16,4 +16,9 @@ export class Tree<T> {
   get children(): TreeChildren<T> {
     return this._children;
   }
+
+  get treeChildren(): Array<Tree<T>> {
+    return <Array<Tree<T>>>this._children
+      .filter((child) => child instanceof Tree);
+  }
 }

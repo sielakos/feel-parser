@@ -19,10 +19,10 @@ describe('interval', () => {
 
       if (first instanceof Tree && second instanceof Tree) {
         expect(first.operator).to.eql('open');
-        expect(first.children).to.eql([11]);
+        expect(first.treeChildren[0].children).to.eql([11]);
 
         expect(second.operator).to.eql('open');
-        expect(second.children).to.eql([12]);
+        expect(second.treeChildren[0].children).to.eql([12]);
       } else {
         expect(false, 'Expected children to be instances od Tree').to.eql(true);
       }
@@ -46,10 +46,10 @@ describe('interval', () => {
 
       if (first instanceof Tree && second instanceof Tree) {
         expect(first.operator).to.eql('open');
-        expect(first.children).to.eql([11]);
+        expect(first.treeChildren[0].children).to.eql([11]);
 
         expect(second.operator).to.eql('open');
-        expect(second.children).to.eql([12]);
+        expect(second.treeChildren[0].children).to.eql([12]);
       } else {
         expect(false, 'Expected children to be instances od Tree').to.eql(true);
       }
@@ -73,10 +73,10 @@ describe('interval', () => {
 
       if (first instanceof Tree && second instanceof Tree) {
         expect(first.operator).to.eql('open');
-        expect(first.children).to.eql([11]);
+        expect(first.treeChildren[0].children).to.eql([11]);
 
         expect(second.operator).to.eql('open');
-        expect(second.children).to.eql([12]);
+        expect(second.treeChildren[0].children).to.eql([12]);
       } else {
         expect(false, 'Expected children to be instances od Tree').to.eql(true);
       }
@@ -100,10 +100,10 @@ describe('interval', () => {
 
       if (first instanceof Tree && second instanceof Tree) {
         expect(first.operator).to.eql('closed');
-        expect(first.children).to.eql(['name', 'd']);
+        expect(first.treeChildren[0].children).to.eql(['name', 'd']);
 
         expect(second.operator).to.eql('closed');
-        expect(second.children).to.eql([12]);
+        expect(second.treeChildren[0].children).to.eql([12]);
       } else {
         expect(false, 'Expected children to be instances od Tree').to.eql(true);
       }
@@ -127,10 +127,10 @@ describe('interval', () => {
 
       if (first instanceof Tree && second instanceof Tree) {
         expect(first.operator).to.eql('closed');
-        expect(first.children).to.eql(['name', 'd']);
+        expect(first.treeChildren[0].children).to.eql(['name', 'd']);
 
         expect(second.operator).to.eql('open');
-        expect(second.children).to.eql([12]);
+        expect(second.treeChildren[0].children).to.eql([12]);
       } else {
         expect(false, 'Expected children to be instances od Tree').to.eql(true);
       }
