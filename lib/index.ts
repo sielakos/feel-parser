@@ -11,3 +11,4 @@ export * from './simpleLiteral';
 export * from './simpleValue';
 export * from './interval';
 export * from './positiveUnaryTest';
+export * from './positiveUnaryTestsList';
